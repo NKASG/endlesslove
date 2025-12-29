@@ -51,13 +51,13 @@ const RSVPSection = () => {
                 {contact.phone}
               </p>
               <a
-                href={`https://wa.me/${contact.whatsapp}`}
+                href={`https://wa.me/${contact.whatsapp}?text=${encodeURIComponent(`Assalamu Alaikum ${contact.name},\n\nI would like to RSVP for Azeezat & Afeez's Nikkah ceremony.\n\nName: \nNumber of Guests: \n\nIn Shaa Allah, I will be attending.\n\nJazakAllahu Khairan.`)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-xs uppercase tracking-widest border-b-2 border-border pb-2 hover:border-accent transition-colors duration-300"
               >
                 <MessageCircle className="w-4 h-4" />
-                Message on WhatsApp
+                RSVP on WhatsApp
               </a>
             </motion.div>
           ))}
