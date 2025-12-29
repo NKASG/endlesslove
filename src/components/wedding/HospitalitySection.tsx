@@ -17,7 +17,7 @@ const HospitalitySection = () => {
       return;
     }
 
-    const message = `Salam Afeez, my name is ${name}.%0A%0AI will be attending the Nikkah In Shaa Allah.%0AExpected Arrival: ${arrivalDate}.%0A%0APlease assist with accommodation arrangements.`;
+    const message = encodeURIComponent(`Assalamu Alaikum Afeez,\n\nMy name is ${name}.\n\nI will be attending the Nikkah In Shaa Allah.\nExpected Arrival: ${arrivalDate}.\n\nPlease assist with accommodation arrangements.\n\nJazakAllahu Khairan.`);
     const whatsappUrl = `https://wa.me/2348112701287?text=${message}`;
     window.open(whatsappUrl, "_blank");
     
