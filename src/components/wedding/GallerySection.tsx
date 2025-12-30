@@ -1,15 +1,25 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import coupleImage1 from "@/assets/couple-1.jpg";
-import coupleImage2 from "@/assets/couple-2.jpg";
-import coupleImage3 from "@/assets/couple-3.jpg";
+import img4806 from "@/assets/IMG_4806.JPG";
+import img4807 from "@/assets/IMG_4807.JPG";
+import img4808 from "@/assets/IMG_4808.JPG";
+import img4809 from "@/assets/IMG_4809.JPG";
+import img4811 from "@/assets/IMG_4811.JPG";
+import img4812 from "@/assets/IMG_4812.JPG";
+import img4813 from "@/assets/IMG_4813.JPG";
+import img4815 from "@/assets/IMG_4815.JPG";
 
 const GallerySection = () => {
   const images = [
-    { src: coupleImage1, alt: "Azeezat & Afeez - Portrait 1" },
-    { src: coupleImage2, alt: "Azeezat & Afeez - Portrait 2" },
-    { src: coupleImage3, alt: "Azeezat & Afeez - Portrait 3" },
+    { src: img4806, alt: "Azeezat & Afeez - Memory 1" },
+    { src: img4807, alt: "Azeezat & Afeez - Memory 2" },
+    { src: img4808, alt: "Azeezat & Afeez - Memory 3" },
+    { src: img4809, alt: "Azeezat & Afeez - Memory 4" },
+    { src: img4811, alt: "Azeezat & Afeez - Memory 5" },
+    { src: img4812, alt: "Azeezat & Afeez - Memory 6" },
+    { src: img4813, alt: "Azeezat & Afeez - Memory 7" },
+    { src: img4815, alt: "Azeezat & Afeez - Memory 8" },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -155,7 +165,7 @@ const GallerySection = () => {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="text-center text-muted-foreground text-sm mt-8 italic"
         >
-          Add your pre-wedding photos to complete your story
+          Cherished moments from our journey together
         </motion.p>
       </div>
     </section>
