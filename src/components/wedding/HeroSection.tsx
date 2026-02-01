@@ -1,37 +1,7 @@
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
 import { ChevronDown } from "lucide-react";
 
 const HeroSection = () => {
-  const [timeLeft, setTimeLeft] = useState({
-    days: 0,
-    hours: 0,
-    minutes: 0,
-    seconds: 0,
-  });
-
-  useEffect(() => {
-    const weddingDate = new Date("2026-01-31T10:00:00").getTime();
-
-    const updateCountdown = () => {
-      const now = new Date().getTime();
-      const difference = weddingDate - now;
-
-      if (difference > 0) {
-        setTimeLeft({
-          days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-          hours: Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
-          minutes: Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60)),
-          seconds: Math.floor((difference % (1000 * 60)) / 1000),
-        });
-      }
-    };
-
-    updateCountdown();
-    const interval = setInterval(updateCountdown, 1000);
-    return () => clearInterval(interval);
-  }, []);
-
   const scrollToNext = () => {
     window.scrollTo({
       top: window.innerHeight,
@@ -73,7 +43,7 @@ const HeroSection = () => {
         transition={{ duration: 0.8, delay: 0.3 }}
         className="uppercase tracking-[0.35em] text-xs font-bold text-muted-foreground mb-6"
       >
-        The Nikkah Ceremony Of
+        Celebrating The Nikkah Of
       </motion.p>
 
       {/* Names */}
@@ -93,53 +63,22 @@ const HeroSection = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.7 }}
-        className="flex items-center gap-4 text-sm font-semibold uppercase tracking-widest text-muted-foreground mb-12"
+        className="flex items-center gap-4 text-sm font-semibold uppercase tracking-widest text-muted-foreground mb-16"
       >
         <span>January 31, 2026</span>
         <span className="w-2 h-2 bg-accent rounded-full" />
         <span>Offa, Kwara</span>
       </motion.div>
 
-      {/* Countdown */}
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.9 }}
-        className="flex gap-4 md:gap-8 mb-16"
-      >
-        {[
-          { value: timeLeft.days, label: "Days" },
-          { value: timeLeft.hours, label: "Hours" },
-          { value: timeLeft.minutes, label: "Mins" },
-          { value: timeLeft.seconds, label: "Secs" },
-        ].map((item, index) => (
-          <div key={item.label} className="text-center">
-            <motion.div
-              key={item.value}
-              initial={{ scale: 1.1 }}
-              animate={{ scale: 1 }}
-              className="w-16 h-16 md:w-20 md:h-20 rounded-sm bg-card border border-border shadow-soft flex items-center justify-center mb-2"
-            >
-              <span className="font-serif text-2xl md:text-3xl text-primary">
-                {String(item.value).padStart(2, "0")}
-              </span>
-            </motion.div>
-            <span className="text-[10px] uppercase tracking-widest text-muted-foreground">
-              {item.label}
-            </span>
-          </div>
-        ))}
-      </motion.div>
-
       {/* Scroll indicator */}
       <motion.button
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 0.8, delay: 1.2 }}
+        transition={{ duration: 0.8, delay: 0.9 }}
         onClick={scrollToNext}
         className="absolute bottom-10 flex flex-col items-center gap-2 text-primary/60 hover:text-primary transition-colors cursor-pointer"
       >
-        <span className="text-[10px] uppercase tracking-[0.2em]">Scroll</span>
+        <span className="text-[10px] uppercase tracking-[0.2em]">View Photos</span>
         <ChevronDown className="w-5 h-5 animate-bounce" />
       </motion.button>
     </header>
